@@ -18,7 +18,7 @@ type Props = {
     ))[];
 };
 
-const Home: NextPage<Props> = ({ users }) => {
+const Home: NextPage<Props> = ({ users }: any) => {
   const [username, setUsername] = useState("");
 
   const router = useRouter();
@@ -46,7 +46,7 @@ const Home: NextPage<Props> = ({ users }) => {
       />
       <button onClick={create}>Create</button>
       <div>Users:</div>
-      {users.map((user) => (
+      {users.map((user: any) => (
         <div key={user.id}>
           <div>Username: {user.username}</div>
           <div>Is admin? {user.isAdmin ? "yes" : "no"}</div>
